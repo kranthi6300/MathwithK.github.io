@@ -1,39 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- <title>My First Website</title>
- <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MathVault — Your Mathematics Study Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap" rel="stylesheet" />
 </head>
 <body>
- <!-- HEADER -->
- <header>
- <h1>Hello, I'm [Your Name] ■</h1>
- <p>Welcome to my personal website!</p>
- </header>
- <!-- ABOUT SECTION -->
- <section id="about">
- <h2>About Me</h2>
- <p>I'm a beginner web developer learning to build websites.</p>
- </section>
- <!-- PROJECTS SECTION -->
- <section id="projects">
- <h2>My Projects</h2>
- <ul>
- <li><a href="#">Project One</a></li>
- <li><a href="#">Project Two</a></li>
- </ul>
- </section>
- <!-- CONTACT SECTION -->
- <section id="contact">
- <h2>Contact Me</h2>
- <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
- </section>
- <!-- FOOTER -->
- <footer>
- <p>Made with ❤■ using GitHub Pages</p>
- </footer>
- <script src="js/script.js"></script>
+
+  <!-- ═══════════════════════════════════════
+       PAGE 1: LANDING / HOME
+  ═══════════════════════════════════════ -->
+  <section id="page-landing" class="page active">
+    <div class="landing-bg">
+      <span class="deco-symbol sym1">∑</span>
+      <span class="deco-symbol sym2">∞</span>
+      <span class="deco-symbol sym3">π</span>
+      <span class="deco-symbol sym4">∂</span>
+      <span class="deco-symbol sym5">∫</span>
+    </div>
+    <div class="landing-card">
+      <div class="avatar-wrap">
+        <div class="avatar">
+          <img src="https://via.placeholder.com/120x120/1a1a2e/d4af37?text=You" alt="Profile" />
+        </div>
+        <div class="avatar-ring"></div>
+      </div>
+      <div class="landing-text">
+        <p class="landing-tag">Welcome to</p>
+        <h1 class="landing-title">Math<span class="gold">Vault</span></h1>
+        <p class="landing-desc">
+          This is the site where you find all <strong>Mathematics</strong> concepts,
+          OPP, handbooks &amp; more — curated for JEE, EAMCET &amp; BITSAT aspirants.
+        </p>
+        <p class="landing-cta-text">Press here to dive into the mathematics world :</p>
+        <button class="btn-primary" onclick="navigate('page-hub')">
+          Let's Go <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PAGE 2: MAIN HUB / NAVIGATION
+  ═══════════════════════════════════════ -->
+  <section id="page-hub" class="page">
+    <nav class="top-nav">
+      <button class="back-btn" onclick="navigate('page-landing')">← Home</button>
+      <h2 class="nav-title">Math<span class="gold">Vault</span></h2>
+    </nav>
+    <div class="hub-content">
+      <p class="hub-label">Choose Your Section</p>
+      <h2 class="hub-heading">What do you want to study today?</h2>
+      <div class="hub-grid">
+        <div class="hub-card" onclick="navigate('page-foundation')">
+          <span class="hub-icon">📐</span>
+          <h3>Foundation</h3>
+          <p>Class 6–10 Mathematics</p>
+          <span class="hub-arrow">→</span>
+        </div>
+        <div class="hub-card" onclick="navigate('page-concept')">
+          <span class="hub-icon">💡</span>
+          <h3>Concept Section</h3>
+          <p>6 Concept Types — Intermediate &amp; JEE</p>
+          <span class="hub-arrow">→</span>
+        </div>
+        <div class="hub-card" onclick="navigate('page-pyq')">
+          <span class="hub-icon">📝</span>
+          <h3>PYQ's Section</h3>
+          <p>JEE · EAMCET · BITSAT Past Papers</p>
+          <span class="hub-arrow">→</span>
+        </div>
+        <div class="hub-card" onclick="navigate('page-tricks')">
+          <span class="hub-icon">⚡</span>
+          <h3>Tricks Section</h3>
+          <p>Functions · MI · Matrices</p>
+          <span class="hub-arrow">→</span>
+        </div>
+        <div class="hub-card" onclick="navigate('page-mindmap')">
+          <span class="hub-icon">🧠</span>
+          <h3>Mind Map Section</h3>
+          <p>Visual Learning PDFs</p>
+          <span class="hub-arrow">→</span>
+        </div>
+        <div class="hub-card" onclick="navigate('page-handbook')">
+          <span class="hub-icon">📚</span>
+          <h3>Handbook Section</h3>
+          <p>4 Comprehensive Handbooks</p>
+          <span class="hub-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PAGE 3: FOUNDATION SECTION
+  ═══════════════════════════════════════ -->
+  <section id="page-foundation" class="page">
+    <nav class="top-nav">
+      <button class="back-btn" onclick="navigate('page-hub')">← Back</button>
+      <h2 class="nav-title"><span class="gold">Foundation</span></h2>
+    </nav>
+    <div class="section-content">
+      <p class="section-tag">Section 3</p>
+      <h2 class="section-heading">Foundation Mathematics</h2>
+      <p class="section-note">📌 Each class opens a PDF uploaded separately.</p>
+      <div class="item-list">
+        <div class="item-card" onclick="openPDF('foundation', 'Class 6')">
+          <span class="item-num">06</span>
+          <div class="item-info"><h4>Class 6</h4><p>Foundational Mathematics</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('foundation', 'Class 7')">
+          <span class="item-num">07</span>
+          <div class="item-info"><h4>Class 7</h4><p>Foundational Mathematics</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('foundation', 'Class 8')">
+          <span class="item-num">08</span>
+          <div class="item-info"><h4>Class 8</h4><p>Foundational Mathematics</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('foundation', 'Class 9')">
+          <span class="item-num">09</span>
+          <div class="item-info"><h4>Class 9</h4><p>Foundational Mathematics</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('foundation', 'Class 10')">
+          <span class="item-num">10</span>
+          <div class="item-info"><h4>Class 10</h4><p>Foundational Mathematics</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PAGE 4: CONCEPT SECTION
+  ═══════════════════════════════════════ -->
+  <section id="page-concept" class="page">
+    <nav class="top-nav">
+      <button class="back-btn" onclick="navigate('page-hub')">← Back</button>
+      <h2 class="nav-title"><span class="gold">Concepts</span></h2>
+    </nav>
+    <div class="section-content">
+      <p class="section-tag">Section 4</p>
+      <h2 class="section-heading">Concept Section</h2>
+      <p class="section-note">📌 All chapter names listed. Open a chapter to view uploaded PDF (Intermediate · JEE).</p>
+      <div class="item-list">
+        <div class="item-card" onclick="openPDF('concept', 'Concept Type 1')">
+          <span class="item-num">01</span>
+          <div class="item-info"><h4>Concept Type 1</h4><p>Intermediate &amp; JEE</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('concept', 'Concept Type 2')">
+          <span class="item-num">02</span>
+          <div class="item-info"><h4>Concept Type 2</h4><p>Intermediate &amp; JEE</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('concept', 'Concept Type 3')">
+          <span class="item-num">03</span>
+          <div class="item-info"><h4>Concept Type 3</h4><p>Intermediate &amp; JEE</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('concept', 'Concept Type 4')">
+          <span class="item-num">04</span>
+          <div class="item-info"><h4>Concept Type 4</h4><p>Intermediate &amp; JEE</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('concept', 'Concept Type 5')">
+          <span class="item-num">05</span>
+          <div class="item-info"><h4>Concept Type 5</h4><p>Intermediate &amp; JEE</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('concept', 'Concept Type 6')">
+          <span class="item-num">06</span>
+          <div class="item-info"><h4>Concept Type 6</h4><p>Intermediate &amp; JEE</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PAGE 5: PYQ'S SECTION
+  ═══════════════════════════════════════ -->
+  <section id="page-pyq" class="page">
+    <nav class="top-nav">
+      <button class="back-btn" onclick="navigate('page-hub')">← Back</button>
+      <h2 class="nav-title"><span class="gold">PYQ's</span></h2>
+    </nav>
+    <div class="section-content">
+      <p class="section-tag">Section 5</p>
+      <h2 class="section-heading">Previous Year Questions</h2>
+      <p class="section-note">📌 One PDF uploaded per section for your study.</p>
+      <div class="item-list pyq-list">
+        <div class="item-card pyq-card" onclick="openPDF('pyq', 'JEE PYQs')">
+          <span class="pyq-badge jee">JEE</span>
+          <div class="item-info">
+            <h4>JEE PYQs</h4>
+            <p>Joint Entrance Examination — Past Papers</p>
+          </div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card pyq-card" onclick="openPDF('pyq', 'EAMCET PYQs')">
+          <span class="pyq-badge eamcet">EAMCET</span>
+          <div class="item-info">
+            <h4>EAMCET PYQs</h4>
+            <p>Engineering Agriculture &amp; Medical — Past Papers</p>
+          </div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card pyq-card" onclick="openPDF('pyq', 'BITSAT PYQs')">
+          <span class="pyq-badge bitsat">BITSAT</span>
+          <div class="item-info">
+            <h4>BITSAT PYQs</h4>
+            <p>BITS Admission Test — Past Papers</p>
+          </div>
+          <span class="item-arrow">↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PAGE 6: TRICKS SECTION
+  ═══════════════════════════════════════ -->
+  <section id="page-tricks" class="page">
+    <nav class="top-nav">
+      <button class="back-btn" onclick="navigate('page-hub')">← Back</button>
+      <h2 class="nav-title"><span class="gold">Tricks</span></h2>
+    </nav>
+    <div class="section-content">
+      <p class="section-tag">Section 6</p>
+      <h2 class="section-heading">Tricks Section</h2>
+      <p class="section-note">📌 All chapter names listed. Open to view uploaded PDF.</p>
+      <div class="item-list">
+        <div class="item-card" onclick="openPDF('tricks', 'Functions')">
+          <span class="item-num">⚡</span>
+          <div class="item-info"><h4>Functions</h4><p>Key tricks &amp; shortcuts</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('tricks', 'Mathematical Induction')">
+          <span class="item-num">⚡</span>
+          <div class="item-info"><h4>MI — Mathematical Induction</h4><p>Key tricks &amp; shortcuts</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+        <div class="item-card" onclick="openPDF('tricks', 'Matrices & Determinants')">
+          <span class="item-num">⚡</span>
+          <div class="item-info"><h4>Matrices &amp; Determinants</h4><p>Key tricks &amp; shortcuts</p></div>
+          <span class="item-arrow">↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PAGE 7: MIND MAP SECTION
+  ═══════════════════════════════════════ -->
+  <section id="page-mindmap" class="page">
+    <nav class="top-nav">
+      <button class="back-btn" onclick="navigate('page-hub')">← Back</button>
+      <h2 class="nav-title"><span class="gold">Mind Maps</span></h2>
+    </nav>
+    <div class="section-content">
+      <p class="section-tag">Section 7</p>
+      <h2 class="section-heading">Mind Map Section</h2>
+      <p class="section-note">📌 All mind map PDFs are uploaded here for visual learning.</p>
+      <div class="mindmap-area">
+        <div class="mindmap-placeholder">
+          <span class="mindmap-icon">🧠</span>
+          <h3>Mind Map Library</h3>
+          <p>Your mind map PDFs will be displayed here. Upload PDFs to this section to help students learn visually.</p>
+          <button class="btn-secondary" onclick="openPDF('mindmap', 'Mind Map Collection')">
+            Open Mind Maps →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PAGE 8: HANDBOOK SECTION
+  ═══════════════════════════════════════ -->
+  <section id="page-handbook" class="page">
+    <nav class="top-nav">
+      <button class="back-btn" onclick="navigate('page-hub')">← Back</button>
+      <h2 class="nav-title"><span class="gold">Handbooks</span></h2>
+    </nav>
+    <div class="section-content">
+      <p class="section-tag">Section 8</p>
+      <h2 class="section-heading">Handbook Section</h2>
+      <p class="section-note">📌 In every section I will upload a PDF — read that PDF.</p>
+      <div class="handbook-grid">
+        <div class="handbook-card" onclick="openPDF('handbook', 'Handbook 1')">
+          <div class="handbook-spine"></div>
+          <div class="handbook-body">
+            <span class="handbook-num">01</span>
+            <h4>Handbook — 1</h4>
+            <p>Mathematics Reference</p>
+            <span class="open-link">Read PDF →</span>
+          </div>
+        </div>
+        <div class="handbook-card" onclick="openPDF('handbook', 'Handbook 2')">
+          <div class="handbook-spine"></div>
+          <div class="handbook-body">
+            <span class="handbook-num">02</span>
+            <h4>Handbook — 2</h4>
+            <p>Mathematics Reference</p>
+            <span class="open-link">Read PDF →</span>
+          </div>
+        </div>
+        <div class="handbook-card" onclick="openPDF('handbook', 'Handbook 3')">
+          <div class="handbook-spine"></div>
+          <div class="handbook-body">
+            <span class="handbook-num">03</span>
+            <h4>Handbook — 3</h4>
+            <p>Mathematics Reference</p>
+            <span class="open-link">Read PDF →</span>
+          </div>
+        </div>
+        <div class="handbook-card" onclick="openPDF('handbook', 'Handbook 4')">
+          <div class="handbook-spine"></div>
+          <div class="handbook-body">
+            <span class="handbook-num">04</span>
+            <h4>Handbook — 4</h4>
+            <p>Mathematics Reference</p>
+            <span class="open-link">Read PDF →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PDF MODAL
+  ═══════════════════════════════════════ -->
+  <div id="pdf-modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-title">PDF Viewer</h3>
+        <button class="modal-close" onclick="closePDFModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="pdf-placeholder">
+          <span class="pdf-icon">📄</span>
+          <p id="modal-desc">To link a real PDF, update the <code>pdfLinks</code> object in <code>script.js</code> with your GitHub-hosted PDF URLs.</p>
+          <a id="modal-link" href="#" target="_blank" class="btn-primary modal-btn">Open PDF in New Tab →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
