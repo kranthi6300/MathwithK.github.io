@@ -15,7 +15,7 @@ const pdfLinks = {
     'Class 10': '#',
   },
   'concept': {
-    'Concept Type 1': 'All maths concepts arihant .pdf',
+    'Concept Type 1': 'https://github.com/kranthi6300/MathwithK.github.io/blob/main/All%20maths%20concepts%20arihant%20.pdf',
     'Concept Type 2': '#',
     'Concept Type 3': '#',
     'Concept Type 4': '#',
