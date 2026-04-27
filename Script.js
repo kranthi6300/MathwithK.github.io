@@ -15,7 +15,7 @@ const pdfLinks = {
     'Class 10': '#',
   },
   'concept': {
-    'Concept Type 1': '#',
+    'Concept Type 1': 'All maths concepts arihant .pdf',
     'Concept Type 2': '#',
     'Concept Type 3': '#',
     'Concept Type 4': '#',
