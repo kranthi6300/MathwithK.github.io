@@ -1,4 +1,35 @@
-const pdfLinks={concept:{'Concept Type 1':'https://github.com/kranthi6300/MathwithK.github.io/raw/main/All%20maths%20concepts%20arihant%20.pdf'}};
+const pdfLinks = {
+  concept: {
+    '1': 'https://kranthi6300.github.io/MathwithK.github.io/All%20maths%20concepts%20arihant%20.pdf'
+  }
+};
+function openPDF(s, i) {
+  const url = pdfLinks[s]?.[i];
+  const modalDesc = document.getElementById('modal-desc');
+  const modalLink = document.getElementById('modal-link');
+
+  document.getElementById('modal-title').textContent = i;
+
+  if (url) {
+    modalDesc.innerHTML = `
+      <iframe 
+        src="https://docs.google.com/gview?url=${encodeURIComponent(url)}&embedded=true" 
+        style="width: 100%; height: 70vh; border: none; border-radius: 8px;">
+      </iframe>
+    `;
+    modalLink.href = url;
+    modalLink.textContent = `Open in Fullscreen →`;
+    modalLink.target = "_blank";
+  } else {
+    modalDesc.textContent = 'PDF not linked yet.';
+    modalLink.href = '#';
+    modalLink.textContent = 'No PDF linked yet';
+  }
+
+  document.getElementById('pdf-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
 function navigate(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const p=document.getElementById(id);if(p)p.classList.add('active');window.scrollTo(0,0)}
 function openPDF(s,i){const u=pdfLinks[s]?.[i]||'#',m=document.getElementById('pdf-modal');if(!m)return;document.getElementById('modal-title').textContent=i;document.getElementById('modal-desc').textContent=u==='#'?'PDF not linked yet.':`Open ${i} below.`;const b=document.getElementById('modal-link');b.href=u;b.textContent=u==='#'?'No PDF linked yet':`Open ${i} PDF →`;m.classList.add('open');document.body.style.overflow='hidden'}
 function closePDFModal(){document.getElementById('pdf-modal')?.classList.remove('open');document.body.style.overflow=''}
