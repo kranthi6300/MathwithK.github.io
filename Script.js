@@ -1,7 +1,7 @@
 const pdfLinks = {
   concept: {
     '1': 'https://kranthi6300.github.io/MathwithK.github.io/All%20maths%20concepts%20arihant%20.pdf',
-    'Concept Type 1': 'https://kranthi6300.github.io/MathwithK.github.io/All%20maths%20concepts%20arihant%20.pdf'
+    'Concept Type 1': 'All maths concepts arihant .pdf'
   }
 };
 
